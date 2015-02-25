@@ -63,7 +63,7 @@ $(function() {
 			var randomIndex = Math.random() * words.length << 0;
 			var word = words.splice(randomIndex, 1)[0];
 
-			if (words === 0) {
+			if (words.length === 0) {
 				words = initialWords;
 			}
 

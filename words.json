@@ -260,6 +260,16 @@
 		"wiktionaryURL":"http://de.wiktionary.org/wiki/wieder"
 	},
 	{
+		"name":"weder",
+		"translations":[
+			"neither"
+		],
+		"type":{
+			"name":"Conjunction"
+		},
+		"wiktionaryURL":"http://de.wiktionary.org/wiki/weder"
+	},
+	{
 		"name":"beiden",
 		"translations":[
 			"both"
