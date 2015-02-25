@@ -1,0 +1,86 @@
+@import url(http://fonts.googleapis.com/css?family=Lora:400,400italic);
+
+body {
+	color: #212121;
+	background-color: #f8f8f8;
+	padding: 10px 10px 30px 10px;
+	font-family: 'Lora', Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #00B7FF;
+}
+
+#content {
+	width: 768px;
+	margin: 0 auto;
+}
+
+#word-box {
+	padding: 40px;
+	text-align: center;
+}
+
+#word {
+	color: #212121;
+	font-size: 2.6em;
+	text-decoration: none;
+}
+
+#word:hover {
+	text-decoration: underline;
+}
+
+#gender {
+	color: #555;
+	font-size: 2em;
+	font-style: italic;
+	padding-left: 10px;
+	padding-bottom: 5px;
+}
+
+#description {
+	font-style: italic;
+}
+
+#input {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	color: #555;
+	outline: none;
+	border: 4px solid #eee;
+	padding: 12px;
+	font-size: 1.2em;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+#help {
+	padding: 40px;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.title {
+	color: #777;
+	font-size: .8em;
+	font-weight: normal;
+	text-align: center;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.page-footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	height: 30px;
+	vertical-align: middle;
+	color: #777;
+	font-size: 0.8em;
+	text-align: center;
+}
