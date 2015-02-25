@@ -25,7 +25,8 @@
 		"name":"wenig",
 		"translations":[
 			"not much",
-			"a little"
+			"a little",
+			"little"
 		],
 		"type":{
 			"name":"Adverb"
@@ -46,7 +47,8 @@
 	{
 		"name":"danach",
 		"translations":[
-			"thereafter"
+			"thereafter",
+			"after that"
 		],
 		"type":{
 			"name":"Adverb"
@@ -75,9 +77,9 @@
 		"wiktionaryURL":"http://de.wiktionary.org/wiki/während"
 	},
 	{
-		"name":"der Käufer",
+		"name":"Käufer",
 		"translations":[
-			"the buyer"
+			"buyer"
 		],
 		"type":{
 			"name":"Noun",
@@ -94,16 +96,6 @@
 			"name":"Adverb"
 		},
 		"wiktionaryURL":"http://de.wiktionary.org/wiki/irgendwie"
-	},
-	{
-		"name":"irgend",
-		"translations":[
-			"some"
-		],
-		"type":{
-			"name":"Adverb"
-		},
-		"wiktionaryURL":"http://de.wiktionary.org/wiki/irgend"
 	},
 	{
 		"name":"vor",
@@ -152,7 +144,8 @@
 	{
 		"name":"durch",
 		"translations":[
-			"by"
+			"by",
+			"through"
 		],
 		"type":{
 			"name":"Preposition/Adverb"
@@ -193,9 +186,9 @@
 		"wiktionaryURL":"http://de.wiktionary.org/wiki/erklärt"
 	},
 	{
-		"name":"die Bücherei",
+		"name":"Bücherei",
 		"translations":[
-			"the library"
+			"library"
 		],
 		"type":{
 			"name":"Noun",
