@@ -1,15 +1,3 @@
-<h1 class="title">Deutschübung – Memorization through repetition</h1>
-
-<div id="word-box">
-	<h1><a id="word" target="_blank"></a> <sup id="gender"></sup></h1>
-	<p id="description"></p>
-</div>
-
-<input id="input" type="text" autofocus autocomplete="off" placeholder="Enter the translation and press enter">
-
-<div id="help"></div>
-
-<script>
 $(function() {
 	var speech = {
 		getDefaultVoice: function() {
@@ -33,12 +21,14 @@ $(function() {
 		},
 
 		say: function(message, delayDuration) {
-			var defaultVoice = speech.getDefaultVoice();
+			var defaultVoice = this.defaultVoice || speech.getDefaultVoice();
 
 			if (!defaultVoice) {
 				console.log("No voice found. Couldn't play voice.");
 				return;
 			}
+
+			if (!this.defaultVoice) this.defaultVoice = defaultVoice;
 
 			setTimeout(function() {
 				var utterance = new SpeechSynthesisUtterance(message);
@@ -121,4 +111,3 @@ $(function() {
 	});
 
 });
-</script>

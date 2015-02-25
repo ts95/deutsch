@@ -16,5 +16,9 @@
 	</div>
 
 	<footer class="page-footer">Toni Sučić &copy; 2015</footer>
+
+	<% for (var i = 0; scripts && i < scripts.length; i++) { %>
+		<script src="/js/<%= scripts[i] %>"></script>
+	<% } %>
 </body>
 </html>

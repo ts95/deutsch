@@ -5,7 +5,9 @@ var words = require('../words.json');
 var router = express.Router();
 
 router.get('/', function(req, res) {
-	res.render('index');
+	res.render('index', {
+		scripts: ['index.js']
+	});
 });
 
 router.get('/words.json', function(req, res) {

@@ -278,5 +278,14 @@
 			"name":"Pronoun"
 		},
 		"wiktionaryURL":"http://de.wiktionary.org/wiki/beiden"
+	},
+	{
+		"name": "Eindruck",
+		"translations": ["impression"],
+		"type": {
+			"name": "Noun",
+			"gender": "m"
+		},
+		"wiktionaryURL":"http://de.wiktionary.org/wiki/eindruck"
 	}
 ]
