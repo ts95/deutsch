@@ -49,9 +49,7 @@ $(function() {
 	};
 
 	if (typeof speechSynthesis !== 'undefined') {
-		speechSynthesis.onvoiceschanged = function(e) {
-			console.log(e);
-		};
+		speechSynthesis.onvoiceschanged = function(e) {};
 	}
 
 	$.get('/words.json', function(initialWords) {
@@ -67,7 +65,7 @@ $(function() {
 			var randomIndex = Math.random() * words.length << 0;
 			var word = words.splice(randomIndex, 1)[0];
 
-			console(word, 'taken.', words.length, 'words left.');
+			console.log(word.name, '–', words.length, 'words left.');
 
 			speech.say(word.name, 400);
 
