@@ -23,7 +23,7 @@ $(function() {
 
 			var randomGermanVoice = speechSynthesis.getVoices().filter(function(voice) {
 				return voice.lang === 'de-DE';
-			});
+			})[0];
 
 			return germanGoogleVoice;
 		},
@@ -88,6 +88,7 @@ $(function() {
 			} else {
 				$('#gender').text("");
 				$('#gender').attr('title', "");
+				$('#gender').hide();
 			}
 
 			$('#description').fadeIn(fadeDuration);
@@ -100,6 +101,20 @@ $(function() {
 			words.push(word);
 		}
 
+		function correctBlink() {
+			$('#input').attr('class', 'input-correct');
+			setTimeout(function() {
+				$('#input').attr('class', 'input-default');
+			}, 500);
+		}
+
+		function incorrectBlink() {
+			$('#input').attr('class', 'input-incorrect');
+			setTimeout(function() {
+				$('#input').attr('class', 'input-default');
+			}, 500);
+		}
+
 		var word = fetchWord();
 
 		$('#input').keyup(function(e) {
@@ -109,9 +124,11 @@ $(function() {
 
 				if (~word.translations.indexOf(answer.trim().toLowerCase())) {
 					speech.say("Richtig");
+					correctBlink();
 				} else {
 					returnWord(word);
 					speech.say("Falsch");
+					incorrectBlink();
 					$('#help').text(word.name + ' = ' + word.translations.join(', '))
 						.fadeIn(fadeDuration).delay(5000).fadeOut(fadeDuration);
 				}
