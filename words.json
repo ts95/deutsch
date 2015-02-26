@@ -287,5 +287,52 @@
 			"gender": "m"
 		},
 		"wiktionaryURL":"http://de.wiktionary.org/wiki/eindruck"
+	},
+	{
+		"name": "schon",
+		"translations": ["already"],
+		"type": {
+			"name": "Particle/Adverb"
+		},
+		"wiktionaryURL":"http://de.wiktionary.org/wiki/schon"
+	},
+	{
+		"name": "davon",
+		"translations": ["thereof", "of it"],
+		"type": {
+			"name": "Adverb"
+		}
+	},
+	{
+		"name": "niemals",
+		"translations": ["never"],
+		"type": {
+			"name": "Adverb"
+		},
+		"wiktionaryURL":"http://de.wiktionary.org/wiki/niemals"
+	},
+	{
+		"name": "nie",
+		"translations": ["never"],
+		"type": {
+			"name": "Adverb"
+		},
+		"wiktionaryURL":"http://de.wiktionary.org/wiki/nie"
+	},
+	{
+		"name": "gehören",
+		"translations": ["belongs to"],
+		"type": {
+			"name": "Weak verb"
+		},
+		"wiktionaryURL":"http://de.wiktionary.org/wiki/gehören"
+	},
+	{
+		"name": "werden",
+		"translations": ["will"],
+		"type": {
+			"name": "Irregular verb"
+		},
+		"wiktionaryURL":"http://de.wiktionary.org/wiki/werden"
 	}
 ]

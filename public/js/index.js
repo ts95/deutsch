@@ -43,7 +43,7 @@ $(function() {
 	}
 
 	$.get('/words.json', function(initialWords) {
-		var fadeDuration = 800;
+		var fadeDuration = 1000;
 
 		var words = initialWords.slice();
 
@@ -72,7 +72,8 @@ $(function() {
 					n: "Neuter",
 				}[word.type.gender]);
 			} else {
-				$('#gender').hide();
+				$('#gender').text("");
+				$('#gender').attr('title', "");
 			}
 
 			$('#description').fadeIn(fadeDuration);
