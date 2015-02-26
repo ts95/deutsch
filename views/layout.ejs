@@ -15,7 +15,7 @@
 		<%- body %>
 	</div>
 
-	<footer class="page-footer">Toni Sučić &copy; 2015</footer>
+	<footer class="page-footer">Toni Sučić &copy; <%= (new Date()).getFullYear() %></footer>
 
 	<% for (var i = 0; scripts && i < scripts.length; i++) { %>
 		<script src="/js/<%= scripts[i] %>"></script>

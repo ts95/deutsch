@@ -17,6 +17,14 @@ $(function() {
 				return voice.name === 'Google Deutsch';
 			})[0];
 
+			if (germanGoogleVoice) {
+				return germanGoogleVoice;
+			}
+
+			var randomGermanVoice = speechSynthesis.getVoices().filter(function(voice) {
+				return voice.lang === 'de-DE';
+			});
+
 			return germanGoogleVoice;
 		},
 
