@@ -175,6 +175,14 @@
 		"wiktionaryURL":"http://de.wiktionary.org/wiki/also"
 	},
 	{
+		"name": "so",
+		"translations": ["so"],
+		"type": {
+			"name": "Adverb"
+		},
+		"wiktionaryURL": "http://de.wiktionary.org/wiki/so"
+	},
+	{
 		"name":"erklärt",
 		"translations":[
 			"confirmed",
@@ -334,5 +342,13 @@
 			"name": "Irregular verb"
 		},
 		"wiktionaryURL":"http://de.wiktionary.org/wiki/werden"
+	},
+	{
+		"name": "damit",
+		"translations": ["so that", "in order that", "in order to"],
+		"type": {
+			"name": "Conjunction"
+		},
+		"wiktionaryURL":"http://de.wiktionary.org/wiki/damit"
 	}
 ]

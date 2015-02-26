@@ -45,6 +45,8 @@ $(function() {
 	$.get('/words.json', function(initialWords) {
 		var fadeDuration = 1000;
 
+		console.log('Number of words in total:', initialWords.length);
+
 		var words = initialWords.slice();
 
 		function fetchWord() {
