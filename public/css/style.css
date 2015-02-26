@@ -65,7 +65,7 @@ a {
 }
 
 .input-correct {
-	border-color: rgba(0, 200, 0, 0.5) !important;
+	border-color: rgba(0, 150, 0, 0.5) !important;
 }
 
 .input-incorrect {

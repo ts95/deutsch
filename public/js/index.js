@@ -55,6 +55,15 @@ $(function() {
 	}
 
 	$.get('/words.json', function(initialWords) {
+		var random;
+		if (typeof crypto !== 'undefined') {
+			random = new Random(Random.engines.browserCrypto);
+		} else {
+			var mt = Random.engines.mt19937();
+			mt.autoSeed();
+			random = new Random(mt);
+		}
+
 		var fadeDuration = 1000;
 
 		console.log('Number of words in total:', initialWords.length);
@@ -66,7 +75,7 @@ $(function() {
 				words = initialWords.slice();
 			}
 
-			var randomIndex = Math.random() * words.length << 0;
+			var randomIndex = random.integer(0, words.length);
 			var word = words.splice(randomIndex, 1)[0];
 
 			console.log(word.name + ',', words.length, 'word(s) left.');
