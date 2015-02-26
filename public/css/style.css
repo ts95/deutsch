@@ -71,7 +71,7 @@ a {
 .input-incorrect {
 	border-color: rgba(200, 0, 0, 0.5) !important;
 }
- 
+
 #input::-webkit-input-placeholder {
 	text-align: center;
 }

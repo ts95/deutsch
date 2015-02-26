@@ -75,8 +75,7 @@ $(function() {
 				words = initialWords.slice();
 			}
 
-			var randomIndex = random.integer(0, words.length);
-			var word = words.splice(randomIndex, 1)[0];
+			var word = words.splice(random.integer(0, words.length-1), 1)[0];
 
 			console.log(word.name + ',', words.length, 'word(s) left.');
 
