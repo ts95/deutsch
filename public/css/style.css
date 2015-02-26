@@ -55,9 +55,9 @@ a {
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
-	-webkit-transition: border-color 0.5s ease-out;
-	   -moz-transition: border-color 0.5s ease-out;
-	        transition: border-color 0.5s ease-out;
+	-webkit-transition: border-color .75s;
+	   -moz-transition: border-color .75s;
+	        transition: border-color .75s;
 }
 
 .input-default {
@@ -65,11 +65,11 @@ a {
 }
 
 .input-correct {
-	border-color: rgba(70, 255, 70, 0.5) !important;
+	border-color: rgba(0, 200, 0, 0.5) !important;
 }
 
 .input-incorrect {
-	border-color: rgba(255, 70, 70, 0.5) !important;
+	border-color: rgba(200, 0, 0, 0.5) !important;
 }
  
 #input::-webkit-input-placeholder {

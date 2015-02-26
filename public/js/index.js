@@ -105,14 +105,14 @@ $(function() {
 			$('#input').attr('class', 'input-correct');
 			setTimeout(function() {
 				$('#input').attr('class', 'input-default');
-			}, 500);
+			}, 750);
 		}
 
 		function incorrectBlink() {
 			$('#input').attr('class', 'input-incorrect');
 			setTimeout(function() {
 				$('#input').attr('class', 'input-default');
-			}, 500);
+			}, 750);
 		}
 
 		var word = fetchWord();
