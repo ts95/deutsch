@@ -44,6 +44,10 @@ $(function() {
 				speechSynthesis.speak(utterance);
 			}, delayDuration << 0);
 		},
+
+		speaking: function() {
+			return speechSynthesis.speaking;
+		},
 	};
 
 	if (typeof speechSynthesis !== 'undefined') {
@@ -65,7 +69,7 @@ $(function() {
 			var randomIndex = Math.random() * words.length << 0;
 			var word = words.splice(randomIndex, 1)[0];
 
-			console.log(word.name, '–', words.length, 'words left.');
+			console.log(word.name + ',', words.length, 'word(s) left.');
 
 			speech.say(word.name, 400);
 
@@ -118,6 +122,22 @@ $(function() {
 					word = fetchWord();
 				});
 			}
+		});
+
+		$('#word').mouseover(function() {
+			if (speech.speaking()) return;
+			var utterance = $(this).text();
+			speech.say(utterance);
+		});
+
+		$('#gender').mouseover(function() {
+			if (speech.speaking()) return;
+			var utterance = {
+				m: 'Maskulinum',
+				f: 'Femininum',
+				n: 'Neutrum',
+			}[$(this).text()];
+			speech.say(utterance);
 		});
 	});
 
