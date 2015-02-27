@@ -118,12 +118,12 @@ a {
 		padding: 5px;
 	}
 
-	#word, #gender {
-		font-size: 60%;
+	#word {
+		font-size: 2em;
 	}
 
-	#description {
-		font-size: 80%;
+	#gender {
+		font-size: 1.4em;
 	}
 
 	#input {
