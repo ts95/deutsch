@@ -11,7 +11,7 @@
 
 	<script src="/jquery/dist/jquery.min.js"></script>
 	<script src="/random/lib/random.min.js"></script>
-<% for (var i = 0; scripts && i < scripts.length; i++) { %>
+<% for (var i = 0; typeof scripts !== 'undefined' && i < scripts.length; i++) { %>
 	<script src="/js/<%= scripts[i] %>"></script>
 <% } %>
 </head>
