@@ -133,7 +133,7 @@ $(function() {
 				$('#input').prop('disabled', true);
 				setTimeout(function() {
 					$('#input').prop('disabled', false);
-				}, 1500);
+				}, 1200);
 
 				if (~word.translations.indexOf(answer.trim().toLowerCase())) {
 					speech.say("Richtig");
