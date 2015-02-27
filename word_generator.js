@@ -26,12 +26,23 @@ String.prototype.capitalize = function() {
 	return this.charAt(0).toUpperCase() + this.slice(1, this.length);
 };
 
-function writeNewWordToFile(word, cb) {
+function writeNewWordToFile(newWord, cb) {
 	fs.readFile(path.join(__dirname, 'words.json'), 'utf8', function(err, data) {
 		if (err) throw err;
 
 		var words = JSON.parse(data);
-		words.push(word);
+
+		var wordThatExists = words.filter(function(word) {
+			return word.name === newWord.name;
+		})[0];
+
+		if (wordThatExists) {
+			console.log("This word all ready exists");
+			console.log(wordThatExists);
+			return;
+		}
+
+		words.push(newWord);
 
 		fs.writeFile(path.join(__dirname, 'words.json'), JSON.stringify(words), function(err) {
 			if (err) throw err;

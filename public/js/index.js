@@ -144,6 +144,9 @@ $(function() {
 					incorrectBlink();
 					$('#help').prepend($('<div>').text(word.name + ' = ' + word.translations.join(', '))
 						.fadeIn(fadeDuration).delay(5000).fadeOut(fadeDuration));
+					if ($('#help').children().length > 3) {
+						$('#help').children().last().remove();
+					}
 				}
 
 				$('#word').fadeOut(fadeDuration);

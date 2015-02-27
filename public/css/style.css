@@ -87,6 +87,10 @@ a {
 	text-align: center;
 }
 
+#help div {
+	margin-bottom: 10px;
+}
+
 .title {
 	color: #777;
 	font-size: .9em;
