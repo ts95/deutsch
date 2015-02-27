@@ -5,27 +5,15 @@ $(function() {
 				return undefined;
 			}
 
-			var germanAnnaVoice = speechSynthesis.getVoices().filter(function(voice) {
-				return voice.name === 'Anna';
-			})[0];
-
-			if (germanAnnaVoice) {
-				return germanAnnaVoice;
+			function findFirstVoice(property, value) {
+				return speechSynthesis.getVoices().filter(function(voice) {
+					return voice[property] === value;
+				})[0];
 			}
 
-			var germanGoogleVoice = speechSynthesis.getVoices().filter(function(voice) {
-				return voice.name === 'Google Deutsch';
-			})[0];
-
-			if (germanGoogleVoice) {
-				return germanGoogleVoice;
-			}
-
-			var randomGermanVoice = speechSynthesis.getVoices().filter(function(voice) {
-				return voice.lang === 'de-DE';
-			})[0];
-
-			return germanGoogleVoice;
+			return findFirstVoice('name', 'Anna') ||
+					findFirstVoice('name', 'Google Deutsch') ||
+					findFirstVoice('name', 'de-DE');
 		},
 
 		say: function(message, delayDuration) {
