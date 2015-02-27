@@ -126,9 +126,14 @@ $(function() {
 		var word = fetchWord();
 
 		$('#input').keyup(function(e) {
-			if (e.keyCode === 13) {
+			if (e.keyCode === 13 && !$(this).attr('disabled')) {
 				var answer = $(this).val();
 				$(this).val("");
+
+				$('#input').prop('disabled', true);
+				setTimeout(function() {
+					$('#input').prop('disabled', false);
+				}, 1500);
 
 				if (~word.translations.indexOf(answer.trim().toLowerCase())) {
 					speech.say("Richtig");
@@ -137,8 +142,8 @@ $(function() {
 					returnWord(word);
 					speech.say("Falsch");
 					incorrectBlink();
-					$('#help').text(word.name + ' = ' + word.translations.join(', '))
-						.fadeIn(fadeDuration).delay(5000).fadeOut(fadeDuration);
+					$('#help').prepend($('<div>').text(word.name + ' = ' + word.translations.join(', '))
+						.fadeIn(fadeDuration).delay(5000).fadeOut(fadeDuration));
 				}
 
 				$('#word').fadeOut(fadeDuration);
