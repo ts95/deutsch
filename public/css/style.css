@@ -119,6 +119,14 @@ a {
 		font-size: 60%;
 	}
 
+	#word, #gender {
+		font-size: 60%;
+	}
+
+	#description {
+		font-size: 80%;
+	}
+
 	#input {
 		width: 100%;
 		margin-left: 0;
