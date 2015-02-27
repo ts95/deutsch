@@ -133,6 +133,7 @@ $(function() {
 				$('#input').prop('disabled', true);
 				setTimeout(function() {
 					$('#input').prop('disabled', false);
+					$('#input').focus();
 				}, 1200);
 
 				if (~word.translations.indexOf(answer.trim().toLowerCase())) {
