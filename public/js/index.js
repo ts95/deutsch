@@ -49,11 +49,11 @@ $(function() {
 
 		// The number of times a user has to guess a word correctly before
 		// it word isn't used anymore.
-		limit: 100,
+		limit: 50,
 
 		// Once there are less than @lowerBound words left in the words list,
 		// the progress store will not be used.
-		lowerBound: 0,
+		lowerBound: 20,
 
 		getCount: function(wordName) {
 			return $.cookie(wordName) << 0;
@@ -85,8 +85,6 @@ $(function() {
 			mt.autoSeed();
 			random = new Random(mt);
 		}
-
-		progressStore.lowerBound = initialWords.length / 2;
 
 		var fadeDuration = 1000;
 
