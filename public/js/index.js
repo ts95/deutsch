@@ -1,4 +1,7 @@
 $(function() {
+	/**
+	 * Utilities for interacting with the HTML5 speech synthesis API.
+	 */
 	var speech = {
 		getDefaultVoice: function() {
 			if (typeof speechSynthesis === 'undefined') {
@@ -38,6 +41,37 @@ $(function() {
 		},
 	};
 
+	/**
+	 * Stores the user's progress. When a user has guessed the meaning of a word
+	 * correctly enough times, the user won't be presented with this word anymore.
+	 */
+	var progressStore = {
+
+		// The number of times a user has to guess a word correctly before
+		// it word isn't used anymore.
+		limit: 100,
+
+		// Once there are less than @lowerBound words left in the words list,
+		// the progress store will not be used.
+		lowerBound: 0,
+
+		getCount: function(wordName) {
+			return $.cookie(wordName) << 0;
+		},
+
+		correct: function(wordName) {
+			var count = $.cookie(wordName) || 0;
+			count++;
+			$.cookie(wordName, count, { expires: 60 });
+		},
+
+		incorrect: function(wordName) {
+			var count = $.cookie(wordName) || 0;
+			count--;
+			$.cookie(wordName, count, { expires: 60 });
+		},
+	};
+
 	if (typeof speechSynthesis !== 'undefined') {
 		speechSynthesis.onvoiceschanged = function(e) {};
 	}
@@ -52,6 +86,8 @@ $(function() {
 			random = new Random(mt);
 		}
 
+		progressStore.lowerBound = initialWords.length / 2;
+
 		var fadeDuration = 1000;
 
 		console.log('Number of words in total:', initialWords.length);
@@ -63,7 +99,16 @@ $(function() {
 				words = initialWords.slice();
 			}
 
-			var word = words.splice(random.integer(0, words.length-1), 1)[0];
+			var randomIndex = random.integer(0, words.length-1);
+
+			while (progressStore.getCount(words[randomIndex].name) >= progressStore.limit &&
+					words.length > progressStore.lowerBound) {
+				console.log('Word', words[randomIndex].name, 'was excluded.');
+				words.splice(randomIndex, 1);
+				randomIndex = random.integer(0, words.length-1);
+			}
+
+			var word = words.splice(randomIndex, 1)[0];
 
 			console.log(word.name + ',', words.length, 'word(s) left.');
 
@@ -126,10 +171,12 @@ $(function() {
 
 				if (~word.translations.indexOf(answer.trim().toLowerCase())) {
 					speech.say("Richtig");
+					progressStore.correct(word.name);
 					correctBlink();
 				} else {
 					returnWord(word);
 					speech.say("Falsch");
+					progressStore.incorrect(word.name);
 					incorrectBlink();
 					$('#help').prepend($('<div>').text(word.name + ' = ' + word.translations.join(', '))
 						.fadeIn(fadeDuration).delay(5000).fadeOut(fadeDuration));

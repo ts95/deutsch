@@ -112,6 +112,17 @@ a {
 	text-align: center;
 }
 
+.cookies-message {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	font-weight: bold;
+	background: rgba(0, 0, 0, 0.8);
+}
+
 /* small displays */
 @media screen and (max-width: 800px) {
 	#content {

@@ -10,7 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 
 	<script src="/jquery/dist/jquery.min.js"></script>
+	<script src="/jquery.cookie/jquery.cookie.js"></script>
 	<script src="/random/lib/random.min.js"></script>
+	<script src="/js/global.js"></script>
 <% for (var i = 0; typeof scripts !== 'undefined' && i < scripts.length; i++) { %>
 	<script src="/js/<%= scripts[i] %>"></script>
 <% } %>
