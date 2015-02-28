@@ -16,7 +16,7 @@ $(function() {
 
 			return findFirstVoice('name', 'Anna') ||
 					findFirstVoice('name', 'Google Deutsch') ||
-					findFirstVoice('name', 'de-DE');
+					findFirstVoice('lang', 'de-DE');
 		},
 
 		say: function(message, delayDuration) {
@@ -56,18 +56,12 @@ $(function() {
 		lowerBound: 20,
 
 		getCount: function(wordName) {
-			return $.cookie(wordName) << 0;
+			return $.cookie(wordName);
 		},
 
-		correct: function(wordName) {
+		incrementCount: function(wordName) {
 			var count = $.cookie(wordName) || 0;
 			count++;
-			$.cookie(wordName, count, { expires: 60 });
-		},
-
-		incorrect: function(wordName) {
-			var count = $.cookie(wordName) || 0;
-			count--;
 			$.cookie(wordName, count, { expires: 60 });
 		},
 	};
@@ -169,12 +163,11 @@ $(function() {
 
 				if (~word.translations.indexOf(answer.trim().toLowerCase())) {
 					speech.say("Richtig");
-					progressStore.correct(word.name);
+					progressStore.incrementCount(word.name);
 					correctBlink();
 				} else {
 					returnWord(word);
 					speech.say("Falsch");
-					progressStore.incorrect(word.name);
 					incorrectBlink();
 					$('#help').prepend($('<div>').text(word.name + ' = ' + word.translations.join(', '))
 						.fadeIn(fadeDuration).delay(5000).fadeOut(fadeDuration));
