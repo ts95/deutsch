@@ -118,10 +118,10 @@ $(function() {
 				var answer = $(this).val();
 				$(this).val("");
 
-				$(this).prop('disabled', true);
+				$('#input').prop('disabled', true);
 				setTimeout(function() {
-					$(this).prop('disabled', false);
-					$(this).focus();
+					$('#input').prop('disabled', false);
+					$('#input').focus();
 				}, 1200);
 
 				if (~word.translations.indexOf(answer.trim().toLowerCase())) {
