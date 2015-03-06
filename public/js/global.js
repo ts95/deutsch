@@ -1,3 +1,9 @@
+if (typeof console === 'undefined') {
+	window.console = {
+		log: function() {}
+	};
+}
+
 $.cookie.json = true;
 
 $(function() {

@@ -14,9 +14,12 @@ $(function() {
 				})[0];
 			}
 
-			return findFirstVoice('name', 'Anna') ||
-					findFirstVoice('name', 'Google Deutsch') ||
-					findFirstVoice('lang', 'de-DE');
+			var defaultVoice =
+				findFirstVoice('name', 'Anna') ||
+				findFirstVoice('name', 'Google Deutsch') ||
+				findFirstVoice('lang', 'de-DE');
+
+			return defaultVoice;
 		},
 
 		say: function(message, delayDuration) {
